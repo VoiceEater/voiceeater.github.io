@@ -151,7 +151,7 @@
 
             if (totalAmount > 0) {
                 // Zakupy zostały dokonane, konto klienta obciążone
-                confirmationMessageElement.innerHTML = 'Zakupy zostały dokonane. Konto klienta zostało obciążone. Miłego dnia';
+                confirmationMessageElement.innerHTML = 'Zakupy zostały dokonane. Konto klienta zostało obciążone. Wartość zakupów: ' + totalAmount.toFixed(2) + ' zł.' + 'Miłego dnia' ;
             } else {
                 // Konto nie zostało obciążone
                 confirmationMessageElement.innerHTML = 'Konto nie zostało obciążone. Dodaj produkty do koszyka.';
