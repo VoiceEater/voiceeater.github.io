@@ -33,7 +33,7 @@ body
 {
     margin-top: 2%;
     width: 100%;
-    height: 10%;
+    height: 5%;
     text-align: center;
     color: antiquewhite;
 }
@@ -54,7 +54,7 @@ th, td {
 }
 
 th {
-    background-color: #f59115; /* Kolor tła dla tytułowych wierszy */
+    background-color: #f59115; 
     color: #fff;
 }
 
