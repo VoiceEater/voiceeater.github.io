@@ -20,8 +20,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Produkt 1</td>
-                    <td class="price">10.00 zł</td>
+                    <td>Ser Ememensaleler</td>
+                    <td class="price">420.00 zł</td>
                     <td>
                         <button onclick="decreaseQuantity('quantity1')">-1</button>
                         <span class="quantity" id="quantity1">0</span>
@@ -29,8 +29,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Produkt 2</td>
-                    <td class="price">20.00 zł</td>
+                    <td>10 Jajek</td>
+                    <td class="price">6.45 zł</td>
                     <td>
                         <button onclick="decreaseQuantity('quantity2')">-1</button>
                         <span class="quantity" id="quantity2">0</span>
@@ -38,8 +38,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Produkt 3</td>
-                    <td class="price">20.00 zł</td>
+                    <td>1kg ziemaniaków</td>
+                    <td class="price">2.94 zł</td>
                     <td>
                         <button onclick="decreaseQuantity('quantity3')">-1</button>
                         <span class="quantity" id="quantity3">0</span>
@@ -47,8 +47,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Produkt 4</td>
-                    <td class="price">20.00 zł</td>
+                    <td>Harnaś (0.5l puszka)</td>
+                    <td class="price">3.99 zł</td>
                     <td>
                         <button onclick="decreaseQuantity('quantity4')">-1</button>
                         <span class="quantity" id="quantity4">0</span>
@@ -56,8 +56,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Produkt 5</td>
-                    <td class="price">20.00 zł</td>
+                    <td>Monster Energy</td>
+                    <td class="price">6.66 zł</td>
                     <td>
                         <button onclick="decreaseQuantity('quantity5')">-1</button>
                         <span class="quantity" id="quantity5">0</span>
@@ -65,8 +65,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Produkt 6</td>
-                    <td class="price">20.00 zł</td>
+                    <td>Pierś z kurczaka - paczka 1kg</td>
+                    <td class="price"> 21.37 zł</td>
                     <td>
                         <button onclick="decreaseQuantity('quantity6')">-1</button>
                         <span class="quantity" id="quantity6">0</span>
@@ -74,8 +74,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Produkt 7</td>
-                    <td class="price">20.00 zł</td>
+                    <td>Żeberka - paczka 1kg</td>
+                    <td class="price">29.37 zł</td>
                     <td>
                         <button onclick="decreaseQuantity('quantity7')">-1</button>
                         <span class="quantity" id="quantity7">0</span>
@@ -83,8 +83,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Produkt 8</td>
-                    <td class="price">20.00 zł</td>
+                    <td>Boczek - paczka 250g</td>
+                    <td class="price"> 7.54 zł</td>
                     <td>
                         <button onclick="decreaseQuantity('quantity8')">-1</button>
                         <span class="quantity" id="quantity8">0</span>
@@ -92,8 +92,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Produkt 9</td>
-                    <td class="price">20.00 zł</td>
+                    <td>Cola 2.5l</td>
+                    <td class="price">5.45 zł</td>
                     <td>
                         <button onclick="decreaseQuantity('quantity9')">-1</button>
                         <span class="quantity" id="quantity9">0</span>
@@ -110,9 +110,12 @@
                 </tr>
             </tbody>
         </table>
+        <button id="goToCartButton" onclick="goToCart()">Przejdź do koszyka</button>
+
     </div>
        
     <div id="f">
+        <p id="confirmationMessage"></p>
     </div>
 
     <script>
@@ -141,6 +144,18 @@
             }
 
             totalElement.innerHTML = total.toFixed(2) + ' zł'; 
+        }
+        function goToCart() {
+            var totalAmount = parseFloat(document.getElementById('total').innerHTML);
+            var confirmationMessageElement = document.getElementById('confirmationMessage');
+
+            if (totalAmount > 0) {
+                // Zakupy zostały dokonane, konto klienta obciążone
+                confirmationMessageElement.innerHTML = 'Zakupy zostały dokonane. Konto klienta zostało obciążone. Miłego dnia';
+            } else {
+                // Konto nie zostało obciążone
+                confirmationMessageElement.innerHTML = 'Konto nie zostało obciążone. Dodaj produkty do koszyka.';
+            }
         }
     </script>
 </body>
