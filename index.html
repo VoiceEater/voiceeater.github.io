@@ -117,6 +117,7 @@
         <p id="weather-info"></p>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         function increaseQuantity(spanId) {
             var quantitySpan = document.getElementById(spanId);
@@ -146,7 +147,7 @@
         }
         function getWeather() {
             var apiKey = 'e3fe0358a370763547df8742e95d4f49';
-            var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Warsaw&appid=' + apiKey;
+            var apiUrl = 'https://api.openweathermap.org/' + apiKey;
 
             axios.get(apiUrl)
                 .then(function (response) {
@@ -162,7 +163,6 @@
                 });
         }
 
-        // Wywołaj funkcję pobierania pogody przy ładowaniu strony
         getWeather();
     </script>
 </body>
