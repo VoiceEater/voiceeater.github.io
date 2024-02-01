@@ -8,9 +8,55 @@
 <body>
     <div id="h">Twój internetowy sklep pod blokiem </div>
 
-    <div id="m"></div>
-
-
+    <div id="m">
+        <table>
+            <thead>
+                <tr>
+                    <th>Przedmiot</th>
+                    <th>Cena</th>
+                    <th>Ilość</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Produkt 1</td>
+                    <td>10.00 zł</td>
+                    <td>
+                        <button onclick="decreaseQuantity('quantity1')">-1</button>
+                        <span id="quantity1">1</span>
+                        <button onclick="increaseQuantity('quantity1')">+1</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Produkt 2</td>
+                    <td>20.00 zł</td>
+                    <td>
+                        <button onclick="decreaseQuantity('quantity2')">-1</button>
+                        <span id="quantity2">1</span>
+                        <button onclick="increaseQuantity('quantity2')">+1</button>
+                    </td>
+                </tr>
+                <!-- Dodaj więcej wierszy według potrzeb -->
+            </tbody>
+        </table>
+        
+        <script>
+            function increaseQuantity(spanId) {
+                var quantitySpan = document.getElementById(spanId);
+                var currentQuantity = parseInt(quantitySpan.innerHTML);
+                quantitySpan.innerHTML = currentQuantity + 1;
+            }
+        
+            function decreaseQuantity(spanId) {
+                var quantitySpan = document.getElementById(spanId);
+                var currentQuantity = parseInt(quantitySpan.innerHTML);
+                if (currentQuantity > 0) {
+                    quantitySpan.innerHTML = currentQuantity - 1;
+                }
+            }
+        </script>
+    </div>
+       
     <div id="f"></div>
 </body>
 </html>
