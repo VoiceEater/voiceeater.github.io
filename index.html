@@ -147,7 +147,7 @@
         }
         function getWeather() {
             var apiKey = 'e3fe0358a370763547df8742e95d4f49';
-            var apiUrl = 'https://api.openweathermap.org/' + apiKey;
+            var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Warsaw&appid=' + apiKey;
 
             axios.get(apiUrl)
                 .then(function (response) {
