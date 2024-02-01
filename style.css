@@ -1,5 +1,12 @@
 body 
 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     background-image:linear-gradient(to bottom,#1d1d1e, #46332e);
 }
 #h
@@ -7,19 +14,21 @@ body
     margin-top: 1%;
     width: 100%;
     height: 15%;
+    padding: 10px;
     text-align: center;
     font-size: xx-large;
     color: antiquewhite;
-    background-color: red;
 }
 #m
 {
     margin-top: 2%;
     width: 100%;
     height: 65%;
-    text-align: center;
+    overflow: hidden;
     color: antiquewhite;
-    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #f
 {
@@ -28,12 +37,12 @@ body
     height: 10%;
     text-align: center;
     color: antiquewhite;
-    background-color: yellow;
 }
 table {
     border-collapse: collapse;
     width: 50%;
     margin: 20px;
+    color: antiquewhite;
 }
 
 table, th, td {
@@ -42,11 +51,12 @@ table, th, td {
 
 th, td {
     padding: 10px;
-    text-align: left;
+    text-align: center;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #f59115; /* Kolor tła dla tytułowych wierszy */
+    color: #fff;
 }
 
 button {
