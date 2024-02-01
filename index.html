@@ -112,7 +112,10 @@
         </table>
     </div>
        
-    <div id="f"></div>
+    <div id="f">
+        <h2>Pogoda:</h2>
+        <p id="weather-info"></p>
+    </div>
 
     <script>
         function increaseQuantity(spanId) {
@@ -141,6 +144,26 @@
 
             totalElement.innerHTML = total.toFixed(2) + ' zł'; 
         }
+        function getWeather() {
+            var apiKey = 'e3fe0358a370763547df8742e95d4f49';
+            var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Warsaw&appid=' + apiKey;
+
+            axios.get(apiUrl)
+                .then(function (response) {
+                    var weatherData = response.data;
+                    var temperature = weatherData.main.temp;
+                    var description = weatherData.weather[0].description;
+
+                    var weatherInfoElement = document.getElementById('weather-info');
+                    weatherInfoElement.innerHTML = 'Temperatura: ' + temperature + '°C, ' + 'Opis: ' + description;
+                })
+                .catch(function (error) {
+                    console.error('Błąd podczas pobierania danych pogodowych:', error);
+                });
+        }
+
+        // Wywołaj funkcję pobierania pogody przy ładowaniu strony
+        getWeather();
     </script>
 </body>
 </html>
